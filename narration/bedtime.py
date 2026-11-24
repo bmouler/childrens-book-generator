@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Turn an epub or text book into one m4b audiobook with a cloned voice.
 
-Runs on the Ubuntu PC inside the Miniforge env "bedtime":
+Runs on the render machine. The example env is Miniforge "bedtime":
   ~/miniforge3/envs/bedtime/bin/python bedtime.py BOOK.epub|BOOK.txt [options]
 GPU run, optional. Set GPU_HOLD_SERVICE if a user service must release the GPU:
   ~/bedtime-audiobooks/gpu-run.sh BOOK.epub [options]
@@ -25,15 +25,24 @@ import sys
 import time
 import zipfile
 from pathlib import Path
+import shutil
 
 os.environ.setdefault("TQDM_DISABLE", "1")
 
 HOME = Path.home()
 BASE = HOME / "bedtime-audiobooks"
 VOICE = BASE / "voice" / "reference.wav"
-FFMPEG = str(HOME / "miniforge3/envs/bedtime/bin/ffmpeg")
-FFPROBE = str(HOME / "miniforge3/envs/bedtime/bin/ffprobe")
-RUBBERBAND = str(HOME / "miniforge3/envs/bedtime/bin/rubberband")
+
+def _tool(name: str) -> str:
+    pinned = HOME / "miniforge3/envs/bedtime/bin" / name
+    if pinned.is_file():
+        return str(pinned)
+    return shutil.which(name) or str(pinned)
+
+
+FFMPEG = _tool("ffmpeg")
+FFPROBE = _tool("ffprobe")
+RUBBERBAND = _tool("rubberband")
 CHUNK_CHARS = 300
 MIN_CHUNK = 80
 MIN_CHAPTER = 600      # shorter parts are title pages or table-of-contents lines

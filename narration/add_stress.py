@@ -13,7 +13,7 @@ mark instead. A line whose letters differ in any other way is left unmarked, and
 The approved hand-marked texts carry no mark on a one-vowel word and none before ё, so this script removes
 those marks. --keep-monosyllables keeps the marks on one-vowel words.
 
-Run it on the Ubuntu PC in the ruaccent-env virtualenv (see README.md):
+Run it on the render machine in the ruaccent-env virtualenv (see README.md):
   ~/bedtime-audiobooks/ruaccent-env/bin/python ~/bedtime-audiobooks/add_stress.py story.txt story.stressed.txt
 
 RUAccent is a model. Read its result before you render. It can be wrong on a homograph (замок, плачу).

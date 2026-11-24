@@ -9,8 +9,8 @@ the clip window, one gain (RMS -20 dBFS, peak at most -1.5 dBFS), 24 kHz, 16-bit
 --verify compares the SHA-256 of the result with the manifest and exits 1 on a mismatch.
 --no-denoise builds the "natural" variant (high-pass only) for comparison.
 
-The exact hash needs the library versions of the standard: numpy 2.2.5 and scipy 1.16.3. On the Ubuntu PC
-(numpy 1.26.4, scipy 1.17.1) the same sound comes out with 9 of 186,480 samples one step apart, so the hash differs.
+The exact hash needs numpy 2.2.5 and scipy 1.16.3. Another version pair can move a few samples
+by one step, so the hash differs.
 
   uv run --no-project --python 3.11 --with numpy==2.2.5 --with scipy==1.16.3 python narration/prepare_reference.py REC.wav --verify
 """

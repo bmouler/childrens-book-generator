@@ -12,7 +12,7 @@ The renderer caches by text, so a build after this loop synthesizes only the lin
 usage: story_critique_loop.py STORY [--mode nighttime|morning] [--rounds 2] [--dry-run]
        [--endpoint URL] [--model ID] [--limit-lines N] [--max-patches 3]
 
-Run this on the Mac. It needs no model download and no GPU. It writes stories/STORY.stressed.txt,
+Run this on your computer. It needs no model download and no GPU. It writes stories/STORY.stressed.txt,
 the plain twin stories/STORY.txt, stories/STORY.critique.jsonl and .critique.json.
 """
 import argparse
@@ -52,10 +52,17 @@ def utc_stamp() -> str:
 
 
 def seconds_per_byte(cfg: dict) -> float:
-    """Speech seconds F5 gives one UTF-8 byte of text, at the generation speed."""
+    """Speech seconds F5 gives one UTF-8 byte of text, at the generation speed.
+
+    An empty window means the template has no recording yet. The critic then uses
+    an 8 second example for the reference sentence. Set window_s after you record.
+    """
     ref = cfg["reference"]
     ref_bytes = len(ref["text"].encode()) + 1
-    ref_secs = ref["window_s"][1] - ref["window_s"][0]
+    window = ref["window_s"]
+    ref_secs = float(window[1]) - float(window[0])
+    if ref_secs <= 0:
+        ref_secs = 8.0
     speed = float(cfg["generation"]["speed"])
     frames_per_sec = 24000 / 256
     return (ref_secs * frames_per_sec / ref_bytes) / speed / frames_per_sec

@@ -32,6 +32,7 @@ Floor is the 10th percentile of the 25 ms frame levels. Speech is the 75th perce
 2. Run `analyze_recording.py` and pick a 7 to 10 second window.
 3. Set `reference.source_recording.name`, `sha256`, `sample_rate` and `duration_s`.
 4. Set `reference.window_s` to the start and end of the clean line, in seconds.
+   Until you set `window_s`, the text critic uses an 8 second example for the reference sentence. The renderer does not use that example. `prepare_reference.py` stops until the window is real.
 5. Set `reference.text` to what the speaker said, with a `+` before the stressed vowel.
 6. Leave `reference.wav_sha256` empty. `prepare_reference.py` prints the hash of the clip. Paste that hash into the config. The renderer then refuses a clip that does not match.
 

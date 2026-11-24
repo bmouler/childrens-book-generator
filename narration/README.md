@@ -18,7 +18,7 @@ export NARRATION_HOST=your-render-machine
 export NARRATION_DEST=bedtime-audiobooks
 ```
 
-`deploy.sh` and `build_story.sh` refuse to run until `NARRATION_HOST` is set. They have no default host.
+`deploy.sh` and `build_story.sh` refuse to run until `NARRATION_HOST` is set. They have no default host. Set `NARRATION_PYTHON` when the Python on that machine is not `~/miniforge3/envs/bedtime/bin/python`.
 
 If a systemd user service holds the GPU, name it. Otherwise the GPU script stops nothing.
 

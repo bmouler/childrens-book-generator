@@ -2,6 +2,7 @@
 __pycache__/
 *.pyc
 .DS_Store
+.venv/
 
 # Generated pictures and PDFs. Rebuild them locally. Do not commit them.
 spike/out/

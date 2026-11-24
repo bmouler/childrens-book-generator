@@ -8,7 +8,7 @@
 #        narration/build_story.sh STORY [--min-part-words N] [--chapters A-B]
 #
 # Set NARRATION_HOST to the SSH name of the render machine before you run this.
-# --chapters builds only that chapter range and does not replace the finished story.
+# Set NARRATION_PYTHON to the Python on that machine when it is not the example path.
 set -euo pipefail
 HOST=${NARRATION_HOST:?Set NARRATION_HOST to the SSH name of the render machine}
 DEST=${NARRATION_DEST:-bedtime-audiobooks}
@@ -23,8 +23,13 @@ build_args=("$@")
 ./deploy.sh
 mkdir -p builds
 rc=0
+if [ -n "${NARRATION_PYTHON:-}" ]; then
+  remote_py=$(printf '%q' "$NARRATION_PYTHON")
+else
+  remote_py='$HOME/miniforge3/envs/bedtime/bin/python'
+fi
 ssh -n -o BatchMode=yes "$HOST" \
-  "cd '$DEST' && PYTHONPATH=. ~/miniforge3/envs/bedtime/bin/python story_build.py '$story' ${build_args[*]:-}" || rc=$?
+  "cd '$DEST' && PYTHONPATH=. $remote_py story_build.py '$story' ${build_args[*]:-}" || rc=$?
 
 for f in "stories/$story.stressed.txt" "stories/$story.txt" "stories/$story.critique.json" "stories/$story.critique.jsonl"; do
   scp -q -o BatchMode=yes "$HOST:$DEST/$f" "$f" </dev/null 2>/dev/null || true

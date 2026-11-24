@@ -8,7 +8,7 @@ sounds like another one as the other word (горела as горело). It oft
 "спасибо за просмотр" after the last word. Use the turbo model to settle a doubt: two models that agree
 on a word make a misread unlikely.
 
-Run it on the Ubuntu PC in the bedtime env:
+Run it on the render machine in the bedtime env:
   ~/miniforge3/envs/bedtime/bin/python ~/bedtime-audiobooks/asr_check.py OUT.m4a --expected PARTS.json
 """
 import argparse

@@ -7,13 +7,13 @@ usage: long_story.py NAME [--brief briefs/NAME.json] [--chapters 11] [--minutes 
 Four stages. The plan names the cast, the places, the refrain and one beat per chapter.
 The draft asks for one chapter at a time and carries a continuity sheet forward.
 The check runs the critic from story_critique_loop.py and then the hard rules below.
-The stress stage copies the text to the Ubuntu PC, runs add_stress.py there and pulls it back.
+The stress stage copies the text to NARRATION_HOST, runs add_stress.py there and pulls it back.
 
 Every request and every reply is appended to stories/NAME.writer.jsonl. A rerun resumes
 from that log: a chapter already drafted is not asked for again unless it is in --redo.
 The critic is an existing script with its own request settings. It is not changed here.
 
-Run this on the Mac. The model is http://127.0.0.1:18888/v1, model deepseek-v4.1-flash.
+Set STORY_ENDPOINT and STORY_MODEL. The defaults are http://127.0.0.1:18888/v1 and deepseek-v4.1-flash.
 """
 import argparse
 import datetime
@@ -44,8 +44,8 @@ MIN_WORDS, MAX_WORDS = 2, 24       # the renderer's own per-line rule
 PARAGRAPH_MIN, PARAGRAPH_MAX = 3, 6
 CHAPTER_MIN, CHAPTER_MAX = 180, 220
 DRAFT_TRIES = 4
-ENDPOINT = "http://127.0.0.1:18888/v1"
-MODEL = "deepseek-v4.1-flash"
+ENDPOINT = os.environ.get("STORY_ENDPOINT", "http://127.0.0.1:18888/v1")
+MODEL = os.environ.get("STORY_MODEL", "deepseek-v4.1-flash")
 TEMPERATURE = 0.2
 TIMEOUT = 4 * 3600.0
 MAX_TOKENS = 98304

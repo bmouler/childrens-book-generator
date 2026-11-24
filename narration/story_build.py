@@ -17,7 +17,7 @@ usage: story_build.py STORY [--mode auto|nighttime|morning] [--rounds 2] [--skip
        [--dry-run] [--workers 2] [--threads 8] [--max-unresolved 2] [--device auto|cuda|cpu]
        [--min-part-words N] [--chapters A-B]
 
-Run this on the Ubuntu PC in the bedtime env. The Mac wrapper narration/build_story.sh ships the
+Run this on the render machine in the bedtime env. narration/build_story.sh ships the
 code and the text and pulls the result back. --chapters A-B builds only that chapter range for a
 listen and never replaces the finished story. --device auto borrows the GPU once for the whole
 render through gpu-run.sh --exec, so synthesis and every Whisper round share one window.
@@ -372,7 +372,9 @@ def main() -> None:
     if seam.returncode:
         failures.append("seam spread over the gate")
 
-    levels = measure_loudnorm(str(Path.home() / "miniforge3/envs/bedtime/bin/ffmpeg"), staged,
+    pinned_ffmpeg = Path.home() / "miniforge3/envs/bedtime/bin/ffmpeg"
+    ffmpeg = str(pinned_ffmpeg) if pinned_ffmpeg.is_file() else (shutil.which("ffmpeg") or str(pinned_ffmpeg))
+    levels = measure_loudnorm(ffmpeg, staged,
                               cfg["output"]["loudnorm"]["i"], cfg["output"]["loudnorm"]["tp"],
                               cfg["output"]["loudnorm"]["lra"])
     lufs, peak = float(levels["input_i"]), float(levels["input_tp"])

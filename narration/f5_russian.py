@@ -19,7 +19,7 @@ under the narration.
 --seeds FILE is a JSON list with one seed per part (null keeps the default). russian_quality_loop.py writes
 it. The pauses still come from PARTS and --mode, so one set of chosen seeds can be assembled in any mode.
 
-Run it on the Ubuntu PC in the f5-env virtualenv (see README.md):
+Run it on the render machine in the f5-env virtualenv (see README.md):
   ~/bedtime-audiobooks/f5-env/bin/python ~/bedtime-audiobooks/f5_russian.py PARTS.json --out OUT.m4a
 Reruns resume. A part is cached under its text, reference, speed, steps, guidance and seed.
 --workers N renders the parts in N parallel processes (every part has its own seed, so the audio is the same
