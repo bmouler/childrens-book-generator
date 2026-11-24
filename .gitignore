@@ -1,0 +1,35 @@
+# Python and macOS junk
+__pycache__/
+*.pyc
+.DS_Store
+
+# Generated pictures and PDFs. Rebuild them locally. Do not commit them.
+spike/out/
+renders/
+narration/covers/
+narration/builds/
+*.png
+
+# Secrets and a child's photo must never reach the repo.
+.env
+private/
+photos/
+*.heic
+*.HEIC
+*.jpg
+*.jpeg
+*.JPG
+*.JPEG
+hero_photo*
+
+# A voice recording is biometric data. Keep recordings, references and rendered audio
+# on disk. narration/config holds settings, not a voice file.
+narration/voice/
+narration/samples/
+narration/books/
+narration/books-ru/
+*.wav
+*.m4a
+*.m4b
+*.mp3
+*.flac

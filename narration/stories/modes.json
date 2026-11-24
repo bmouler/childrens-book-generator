@@ -1,0 +1,300 @@
+{
+  "luchik": {
+    "mode": "nighttime",
+    "why": "The moon rises over a dark forest, the wind stops, and the moonbeam says goodnight to every animal.",
+    "description": "A moonbeam puts the forest to sleep, one animal at a time. Night.",
+    "values": [
+      "calm",
+      "kindness",
+      "comfort"
+    ],
+    "shows": "A moonbeam bunny visits each animal in turn, leaves a light with a frightened bear cub and counts nuts with a worried squirrel until every one sleeps.",
+    "allows_fear": true
+  },
+  "odeyalo": {
+    "mode": "nighttime",
+    "why": "A cold autumn night. The bear pulls his blanket up and the moon hides, so the last line is darkness.",
+    "description": "A bear finds his blanket and the moon hides. Night.",
+    "values": [
+      "inclusion",
+      "sharing",
+      "kindness"
+    ],
+    "shows": "A bear lets every cold animal under his blanket, saying there is room for all, and the guests shift to make space."
+  },
+  "palchiki": {
+    "mode": "nighttime",
+    "why": "A quiet evening, the first star, and a fox cub who does not want to sleep until his fingers count him down.",
+    "description": "A fox cub counts his fingers down to sleep. Night.",
+    "values": [
+      "calm",
+      "belonging"
+    ],
+    "shows": "A mother fox helps her cub put each part of his body to sleep, stroking, tucking and kissing him until he rests."
+  },
+  "poezd": {
+    "mode": "nighttime",
+    "why": "The train only runs at night, takes the ones who want to sleep, and never hurries or wakes anyone.",
+    "description": "A quiet night train takes the sleepy ones home. Night.",
+    "values": [
+      "calm",
+      "kindness",
+      "patience"
+    ],
+    "shows": "A night train picks up tired animals, waits for the slow ones and thanks the owl who guards the forest."
+  },
+  "solnce": {
+    "mode": "morning",
+    "why": "Before dawn the mouse wakes the field: the rooster crows, the mist lifts, the sun comes up and everyone gets breakfast.",
+    "description": "A mouse wakes the field and the sun comes up. Morning.",
+    "values": [
+      "teamwork",
+      "gratitude"
+    ],
+    "shows": "A mouse asks his neighbours for help, they all call out until the sun rises, and the squirrel brings him breakfast in thanks.",
+    "min_words": 350
+  },
+  "tramvay": {
+    "mode": "morning",
+    "why": "Before dawn a tram rolls out: the bakery opens, the market sets up and the sun comes over the roofs.",
+    "description": "A tram rolls out before dawn and the city wakes around it. Morning.",
+    "values": [
+      "teamwork",
+      "gratitude",
+      "respect"
+    ],
+    "shows": "A tram and its driver carry a baker, a flower seller, a grandmother and a schoolgirl to work, give way to a cyclist and thank one another."
+  },
+  "petuh": {
+    "mode": "morning",
+    "why": "A rooster sleeps through the dawn, a sparrow wakes him and the whole yard sings the sun up.",
+    "description": "A rooster sleeps through the dawn and a sparrow wakes him. Morning.",
+    "values": [
+      "kindness",
+      "gratitude",
+      "teamwork"
+    ],
+    "shows": "A sparrow wakes a rooster who overslept and helps him warm up his voice, and the rooster thanks him and they agree to help each other."
+  },
+  "hleb": {
+    "mode": "morning",
+    "why": "The baker heats the oven before dawn, the street wakes to the smell, and a boy carries warm bread home to breakfast.",
+    "description": "A baker heats the oven before dawn and a boy carries warm bread home. Morning.",
+    "values": [
+      "gratitude",
+      "patience",
+      "kindness"
+    ],
+    "shows": "A boy waits for the bread to cool, carries it home to his grandmother and sees how much work is in a loaf."
+  },
+  "utka": {
+    "mode": "morning",
+    "why": "At first light a duck walks her seven ducklings to the pond, teaches them to swim and dries them on a warm stone.",
+    "description": "A duck walks her seven ducklings to the pond at first light. Morning.",
+    "values": [
+      "belonging",
+      "respect"
+    ],
+    "shows": "A mother duck leads her seven ducklings to the pond at first light, teaches them to swim and find food and greets the heron and the swan politely."
+  },
+  "strah": {
+    "mode": "nighttime",
+    "form": "verse",
+    "why": "A hare cub in a dark burrow is afraid of a noise, and finds two animals more afraid than he is.",
+    "description": "A hare cub hears a noise and finds friends in the dark. Night.",
+    "values": [
+      "courage",
+      "inclusion"
+    ],
+    "shows": "A frightened hare cub takes his torch, opens the door to the noise and invites two more frightened animals in.",
+    "allows_fear": true
+  },
+  "dozhd": {
+    "mode": "morning",
+    "form": "verse",
+    "why": "A duckling runs out into warm rain, dances in a puddle and laughs with his mother.",
+    "description": "A duckling dances in the warm rain and laughs. Morning.",
+    "values": [
+      "joy",
+      "belonging"
+    ],
+    "shows": "A duckling splashes in a warm puddle and laughs, and his mother dances with him and praises his song."
+  },
+  "sharik": {
+    "mode": "nighttime",
+    "form": "verse",
+    "why": "A balloon leaves the bear cub's paw. He cries, his mother sits with him, and the tears dry.",
+    "description": "A bear cub loses his balloon and his mother sits with him. Night.",
+    "values": [
+      "comfort",
+      "regulation"
+    ],
+    "shows": "A mother bear sits with her cub after his balloon flies away and lets him cry until he feels better."
+  },
+  "zlost": {
+    "mode": "morning",
+    "form": "verse",
+    "why": "The block tower falls and the fox cub is angry. He stamps, then breathes out and builds again.",
+    "description": "A fox cub gets angry, breathes out and builds again. Morning.",
+    "values": [
+      "regulation",
+      "patience"
+    ],
+    "shows": "A fox cub stamps when his tower falls, then breathes out with his mother and builds it again."
+  },
+  "chto-eto": {
+    "mode": "morning",
+    "form": "verse",
+    "why": "A squirrel finds a round piece of glass in the grass. Something looks back at him. It is himself.",
+    "description": "A squirrel finds a little mirror and a friend looks back. Morning.",
+    "values": [
+      "curiosity",
+      "belonging"
+    ],
+    "shows": "A squirrel cub finds a small round mirror, sees his own face and carries it to his mother so that they look together."
+  },
+  "kotenok": {
+    "mode": "nighttime",
+    "form": "verse",
+    "why": "The evening comes down, the mother purrs, the rain gets quieter and the kitten sleeps.",
+    "description": "A kitten falls asleep while his mother purrs and the rain stops. Night.",
+    "values": [
+      "calm",
+      "belonging"
+    ],
+    "shows": "A mother cat lies beside her kitten and purrs while he breathes slowly and falls asleep."
+  },
+  "lodochka": {
+    "mode": "nighttime",
+    "form": "prose",
+    "why": "A wooden boat carries a sleepy mouse down a quiet night river. At every bend one animal settles for the night and gets quieter, until the lantern goes out at his mother's bank.",
+    "description": "A little boat carries a sleepy mouse home past animals going to sleep. Night.",
+    "min_part_words": 8,
+    "values": [
+      "calm",
+      "belonging"
+    ],
+    "shows": "A wooden boat carries a sleepy mouse down the river past animals settling for the night, and his mother lifts him home to sleep."
+  },
+  "moloko": {
+    "mode": "nighttime",
+    "why": "An evening in a warm flat with the moon, pyjamas, a blanket and a boy falling asleep.",
+    "description": "Vanya spills his milk, tells Grandpa first, and they wipe it up. Night.",
+    "values": [
+      "honesty",
+      "belonging"
+    ],
+    "shows": "Vanya puts the cup down, walks to the kitchen and tells his grandfather that he spilled the milk before anyone asks."
+  },
+  "prosti": {
+    "mode": "nighttime",
+    "why": "Dusk in the forest, the stars come out and two friends fall asleep in a moss house.",
+    "description": "Topa steps on Ryzhik's twig house, says sorry, and they build it again. Night.",
+    "values": [
+      "sorry",
+      "kindness"
+    ],
+    "shows": "Topa stays beside the broken house, says sorry to Ryzhik, and Ryzhik forgives him and asks him to mend it together."
+  },
+  "spasibo": {
+    "mode": "nighttime",
+    "why": "Sunset, the moon rises and the hares yawn and go to sleep in their burrow.",
+    "description": "Papa Hare, Pryg and Skok thank the day one gift at a time. Night.",
+    "values": [
+      "gratitude",
+      "belonging"
+    ],
+    "shows": "At sunset the hares name each good thing of the day and say thank you for it, and the little hares thank their father for carrying them over the stream."
+  },
+  "koridor": {
+    "mode": "nighttime",
+    "why": "The story opens at night under the moon and stars and ends with the girl falling asleep in bed.",
+    "description": "Nina walks the dark hall with Grandma, then back on her own. Night.",
+    "values": [
+      "courage",
+      "belonging"
+    ],
+    "shows": "Nina says the dark hall scares her a little, walks it holding Grandma's hand, then walks back alone while Grandma watches from the kitchen door.",
+    "allows_fear": true
+  },
+  "sad": {
+    "mode": "nighttime",
+    "why": "The story takes place on an evening under the first star and the moon and ends with the boy falling asleep.",
+    "description": "Lyova and Mama water the sprouts and tuck the garden in. Night.",
+    "values": [
+      "nature",
+      "kindness"
+    ],
+    "shows": "Lyova lifts a beetle off the path on a leaf and carries it to the grass, then covers the smallest sprout with an upside-down flowerpot for the night."
+  },
+  "ulitka": {
+    "mode": "nighttime",
+    "why": "The story takes place on an evening while the moon rises and ends with the snail and the beetle asleep.",
+    "description": "Ula the snail slips, tries again, and Tuk waits for her. Night.",
+    "values": [
+      "patience",
+      "kindness"
+    ],
+    "shows": "Ula slips off a wet leaf three times and climbs it again each time, while her friend Tuk sits down, hums and waits for her instead of rushing ahead."
+  },
+  "lopatka": {
+    "mode": "morning",
+    "why": "The opening has the early morning sun, dew on the swing, the yard waking and a new day.",
+    "description": "Two friends, one red spade and a sand castle in the sun. Morning.",
+    "values": [
+      "sharing",
+      "joy"
+    ],
+    "shows": "Katya lets go of the one spade and counts to five aloud while Dima digs, and then they swap."
+  },
+  "korzinka": {
+    "mode": "morning",
+    "why": "The opening has the morning, the dawn, dew on the grass, the sun over the willow and a new day.",
+    "description": "A duckling and a rabbit help a badger push his apple cart uphill. Morning.",
+    "values": [
+      "kindness",
+      "teamwork"
+    ],
+    "shows": "Nobody asks the duckling Pukh, yet he walks behind the badger's stuck cart and pushes it uphill."
+  },
+  "sapozhok": {
+    "mode": "morning",
+    "why": "The opening has a sunny morning, the sun in the window, a child who woke up, breakfast and a new day.",
+    "description": "Asya pulls on her red boots by herself on the third try. Morning.",
+    "values": [
+      "patience",
+      "joy"
+    ],
+    "shows": "Asya takes off the boot that did not fit and tries again, twice, while her father waits and does not do it for her."
+  },
+  "mozhno": {
+    "mode": "morning",
+    "why": "The opening has first sun, dew on the meadow and a fox cub who wakes up for the day.",
+    "description": "A fox cub asks a hedgehog before he strokes him. Morning.",
+    "values": [
+      "respect",
+      "kindness"
+    ],
+    "shows": "The fox cub stops his paw, asks the hedgehog if he may stroke him, waits when the hedgehog says not yet, and then strokes the prickles softly downward."
+  },
+  "yagoda": {
+    "mode": "morning",
+    "why": "The opening has first sun over the berry glade, dew on the grass and berries picked for breakfast.",
+    "description": "A bear cub eats the last berry and tells his papa first. Morning.",
+    "values": [
+      "honesty",
+      "belonging"
+    ],
+    "shows": "The bear cub leaves the leaf that could wipe his red mouth and tells his father that he ate the last berry before his father asks."
+  },
+  "zaika": {
+    "mode": "morning",
+    "why": "The opening has the rain ending, the sun coming out, dew in the yard and a girl who is fully awake.",
+    "description": "A brother says sorry and his sister helps wash the wet toy hare. Morning.",
+    "values": [
+      "sorry",
+      "kindness"
+    ],
+    "shows": "The little brother says sorry after his stick knocks the toy hare into the puddle, and his sister forgives him and washes the hare with him."
+  }
+}

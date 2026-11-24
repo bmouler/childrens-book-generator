@@ -1,0 +1,23 @@
+{
+  "schema": 1,
+  "note": "The closed list of values a story may teach. A story names one to three of these keys in stories/modes.json, the main value first, and one English sentence `shows` that names the action which shows it. A story shows a value by what a character does. No line says what a child must do. The nine values marked with a date were confirmed on 2026-11-05. The other keys are taught by the 16 stories that were finished before that day. Religious content is not a value and is refused by config/content-lint.json.",
+  "values": {
+    "calm": {"name": "Calm and rest", "means": "Settling down, a bedtime routine, breathing slowly.", "confirmed": null},
+    "comfort": {"name": "Comfort", "means": "Sitting with someone who is sad or hurt, and staying until it passes.", "confirmed": null},
+    "regulation": {"name": "Handling a big feeling", "means": "Anger or frustration, then breathe, then try again.", "confirmed": null},
+    "joy": {"name": "Joy", "means": "A glad moment with someone you love, shared out loud.", "confirmed": null},
+    "belonging": {"name": "Belonging", "means": "Family love. A child who is loved without conditions.", "confirmed": null},
+    "teamwork": {"name": "Teamwork", "means": "Everyone has a job and the day works because of it.", "confirmed": null},
+    "inclusion": {"name": "Inclusion", "means": "Welcoming a newcomer and making room.", "confirmed": null},
+    "curiosity": {"name": "Curiosity", "means": "Discovering something and wanting to look again.", "confirmed": null},
+    "honesty": {"name": "Honesty", "means": "Telling the truth, and owning a mistake, before anyone asks.", "confirmed": "2026-11-05"},
+    "sorry": {"name": "Saying sorry and forgiving", "means": "Saying sorry after an accident, and answering with forgiveness and a repair.", "confirmed": "2026-11-05"},
+    "sharing": {"name": "Sharing and taking turns", "means": "One thing, two children. They wait and take turns.", "confirmed": "2026-11-05"},
+    "respect": {"name": "Respect: ask first, gentle hands", "means": "Asking before taking, and touching softly.", "confirmed": "2026-11-05"},
+    "kindness": {"name": "Helping a friend", "means": "Seeing that a friend needs help and helping without being asked.", "confirmed": "2026-11-05"},
+    "patience": {"name": "Patience and trying again", "means": "Waiting, and trying again after it did not work.", "confirmed": "2026-11-05"},
+    "gratitude": {"name": "Gratitude", "means": "Saying thank you and noticing what others did.", "confirmed": "2026-11-05"},
+    "courage": {"name": "Courage with someone near", "means": "A fear is named, shared and faced a small step at a time.", "confirmed": "2026-11-05"},
+    "nature": {"name": "Care for nature and animals", "means": "Gentle hands with plants and small animals.", "confirmed": "2026-11-05"}
+  }
+}

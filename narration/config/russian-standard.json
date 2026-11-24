@@ -1,0 +1,116 @@
+{
+  "name": "russian-standard",
+  "decision": "Fill reference after you record. See RUSSIAN_STANDARD.md. Do not commit a voice file or its hash.",
+  "model": {
+    "engine": "F5-TTS",
+    "package": "f5-tts==1.1.22",
+    "f5_config": "F5TTS_v1_Base",
+    "checkpoint_repo": "Misha24-10/F5-TTS_RUSSIAN",
+    "revision": "ea166adeae4c80ec5ee423a671e2bdb83906cf84",
+    "checkpoint": "F5TTS_v1_Base_v2/model_last_inference.safetensors",
+    "vocab": "F5TTS_v1_Base/vocab.txt",
+    "checkpoint_license": "CC-BY-NC-4.0, family use only"
+  },
+  "generation": {
+    "nfe_step": 32,
+    "cfg_strength": 2.0,
+    "speed": 0.788,
+    "seed_base": 20261018,
+    "device": "cpu",
+    "threads": 8,
+    "pause_line_s": 0.6,
+    "pause_paragraph_s": 0.8
+  },
+  "modes": {
+    "nighttime": {
+      "description": "Night pace. The model adds 0.4 to 1.2 s of silence at each part start, so the build trims part edges to 0.15 s and sets the pause to 0.9 s. That gives about a 1.2 s gap.",
+      "bed": "night-bed.wav",
+      "bed_sha256": "a80ae6540cd2a3a321418aad694613fd57d43bc9da42307c06f2f73cb7d5c0c7",
+      "part_edge_s": 0.15,
+      "min_part_words": 0,
+      "pause_line_s": 0.9,
+      "pause_paragraph_s": 1.1,
+      "seam": {
+        "max_p90_s": 1.5,
+        "max_gap_s": 2.4
+      },
+      "music": {
+        "integrated_lufs": -29,
+        "true_peak_db": -8,
+        "lra": 11,
+        "fade_in_s": 4,
+        "fade_out_s": 10,
+        "tail_s": 20,
+        "duck_threshold": 0.025,
+        "duck_ratio": 2,
+        "duck_attack_ms": 20,
+        "duck_release_ms": 4000
+      }
+    },
+    "morning": {
+      "description": "The same voice with a shorter pause and a brighter bed. Part edges trim to 0.15 s, the pause is 0.55 s, and the gap stays about 0.85 s.",
+      "bed": "morning-bed.wav",
+      "bed_sha256": "38972cf7e7ee9510a61221e0458efc8fa7a5db0b85121dcb422b211938a08469",
+      "part_edge_s": 0.15,
+      "min_part_words": 0,
+      "pause_line_s": 0.55,
+      "pause_paragraph_s": 0.75,
+      "seam": {
+        "max_p90_s": 1.3,
+        "max_gap_s": 2.1
+      },
+      "music": {
+        "integrated_lufs": -24,
+        "true_peak_db": -6,
+        "lra": 11,
+        "fade_in_s": 1.5,
+        "fade_out_s": 2.5,
+        "tail_s": 5,
+        "duck_threshold": 0.035,
+        "duck_ratio": 2,
+        "duck_attack_ms": 15,
+        "duck_release_ms": 4500
+      }
+    }
+  },
+  "reference": {
+    "source_recording": {
+      "name": "",
+      "sha256": "",
+      "sample_rate": 0,
+      "duration_s": 0
+    },
+    "window_s": [
+      0,
+      0
+    ],
+    "hpf": {
+      "hz": 70,
+      "order": 4
+    },
+    "denoise": {
+      "method": "wiener-decision-directed",
+      "floor_db": -9.0,
+      "alpha": 0.95,
+      "nfft": 512,
+      "noverlap": 384
+    },
+    "level": {
+      "target_rms_dbfs": -20.0,
+      "peak_cap_dbfs": -1.5
+    },
+    "output_sample_rate": 24000,
+    "text": "Когд+а над кр+ышами появ+ились звёзды, в+етер затих+ал, рек+а текл+а м+едленно и спок+ойно, и всё вокр+уг начин+ало засып+ать.",
+    "wav_name": "reference-ru-standard.wav",
+    "wav_sha256": ""
+  },
+  "output": {
+    "loudnorm": {
+      "i": -18,
+      "tp": -2,
+      "lra": 11
+    },
+    "aac_bitrate": "160k",
+    "sample_rate": 48000
+  }
+}

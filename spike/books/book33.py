@@ -1,0 +1,60 @@
+"""Book 33: "Day and Night!" — age 5, the Earth turns.
+
+Day, night, morning, again. Then the why: Earth turns. The turning Earth makes day and night,
+one side in the sunlight, one side in the dark. Space science, one turn at a time.
+"""
+
+STORY = {
+    "title": "Day and Night!",
+    "tense": "pres",
+    "cover": {"art": "cover", "clauses": [{"phrase": "title_day_night"}]},
+    "pages": [
+        {"art": "p01_sun", "focus": ["sun"],
+         "clauses": [{"subj": {"n": "sun", "art": "the"}, "verb": "shine"}]},
+        {"art": "p02_day", "focus": ["day"],
+         "clauses": [{"phrase": "it_day"}]},
+        {"art": "p03_play", "focus": ["play"],
+         "clauses": [{"subj": {"pron": "we"}, "verb": "play"}]},
+        {"art": "p04_set", "focus": ["set"],
+         "clauses": [{"subj": {"n": "sun", "art": "the"}, "verb": "set"}]},
+        {"art": "p05_night", "focus": ["night"],
+         "clauses": [{"phrase": "it_night"}]},
+        {"art": "p06_quiet", "focus": ["quiet"],
+         "clauses": [{"pred": "quiet", "subj": {"n": "night", "art": "the"}}]},
+        {"art": "p07_moon", "focus": ["moon"],
+         "clauses": [{"subj": {"n": "moon", "art": "the"}, "verb": "shine"}]},
+        {"art": "p08_stars", "focus": ["star"],
+         "clauses": [{"subj": {"n": "star", "num": "pl"}, "verb": "twinkle"}]},
+        {"art": "p09_sleep", "focus": ["sleep"],
+         "clauses": [{"subj": {"pron": "we"}, "verb": "sleep"}]},
+        {"art": "p10_sun_comes", "focus": ["sun"],
+         "clauses": [{"subj": {"n": "sun", "art": "the"}, "verb": "come"}]},
+        {"art": "p11_morning", "focus": ["morning"],
+         "clauses": [{"phrase": "it_morning"}]},
+        {"art": "p12_wake", "focus": ["wake"],
+         "clauses": [{"subj": {"pron": "we"}, "verb": "wake"}]},
+        {"art": "p13_day_again", "focus": ["day"],
+         "clauses": [{"phrase": "day_again"}]},
+        {"art": "p14_why", "focus": ["why", "turn"],
+         "clauses": [{"q_why": {"subj": "earth", "verb": "turn"}}]},
+        {"art": "p15_so", "focus": ["so"],
+         "clauses": [{"join": "so", "parts": [
+             {"subj": "earth", "verb": "turn"},
+             {"phrase": "day_and_night"}]}]},
+        {"art": "p16_turn_turn",  # and turns, and turns: a recitation page
+         "clauses": [{"subj": "earth", "verb": "turn"},
+                     {"subj": "earth", "verb": "turn"}]},
+        {"art": "p17_on_earth", "focus": ["earth"],
+         "clauses": [{"subj": {"n": "sun", "art": "the"}, "verb": "shine",
+                      "pp": ("on", "earth")}]},
+        {"art": "p18_we_see_sun", "focus": ["day"],
+         "clauses": [{"subj": {"pron": "we"}, "verb": "see",
+                      "obj": {"n": "sun", "art": "the"}},
+                     {"phrase": "it_day"}]},
+        {"art": "p19_we_see_moon", "focus": ["night"],
+         "clauses": [{"subj": {"pron": "we"}, "verb": "see", "obj": {"n": "moon", "art": "the"}},
+                     {"phrase": "it_night"}]},
+        {"art": "p20_know",  # a recitation page
+         "clauses": [{"phrase": "i_know"}]},
+    ],
+}

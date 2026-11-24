@@ -1,0 +1,48 @@
+"""Book 31: "Shadows!" — age 4, light makes a shadow.
+
+The sun makes it, it runs after me, it grows long and short, a cloud takes it away,
+and it always comes back. The first physics of light, on a sunny day.
+"""
+
+STORY = {
+    "title": "Shadows!",
+    "tense": "pres",
+    "cover": {"art": "cover", "clauses": [{"phrase": "title_shadows"}]},
+    "pages": [
+        {"art": "p01_sun", "focus": ["sun"],
+         "clauses": [{"subj": {"n": "sun", "art": "the"}, "verb": "shine"}]},
+        {"art": "p02_make", "focus": ["shadow", "make"],
+         "clauses": [{"subj": {"n": "sun", "art": "the"}, "verb": "make",
+                      "obj": "shadow"}]},
+        {"art": "p03_after_me", "focus": ["shadow"],
+         "clauses": [{"phrase": "shadow_runs"}]},
+        {"art": "p04_big", "focus": ["big"],
+         "clauses": [{"pred": "big", "subj": "shadow"}]},
+        {"art": "p05_small", "focus": ["small"],
+         "clauses": [{"pred": "small", "subj": "shadow"}]},
+        {"art": "p06_long", "focus": ["long"],
+         "clauses": [{"pred": "long", "subj": "shadow"}]},
+        {"art": "p07_short", "focus": ["short"],
+         "clauses": [{"pred": "short", "subj": "shadow"}]},
+        {"art": "p08_jump", "focus": ["jump"],
+         "clauses": [{"subj": {"pron": "we"}, "verb": "jump"},
+                     {"subj": "shadow", "verb": "jump"}]},
+        {"art": "p09_cloud", "focus": ["cloud"],
+         "clauses": [{"subj": "cloud", "verb": "come"}]},
+        {"art": "p10_no_shadow", "focus": ["shadow"],
+         "clauses": [{"phrase": "no_shadow"}]},
+        {"art": "p11_hide", "focus": ["hide"],
+         "clauses": [{"subj": "shadow", "verb": "hide"}]},
+        {"art": "p12_cloud_go", "focus": ["leave"],
+         "clauses": [{"subj": "cloud", "verb": "leave"}]},
+        {"art": "p13_sun_again", "focus": ["sun"],
+         "clauses": [{"subj": {"n": "sun", "art": "the"}, "verb": "shine"}]},
+        {"art": "p14_back", "focus": ["shadow"],
+         "clauses": [{"phrase": "shadow_back"}]},
+        {"art": "p15_play", "focus": ["play"],
+         "clauses": [{"subj": {"pron": "we"}, "verb": "play",
+                      "pp": ("with", "shadow")}]},
+        {"art": "p16_look", "focus": ["look"],
+         "clauses": [{"imp": "look", "pp": ("at", "shadow")}]},
+    ],
+}
