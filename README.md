@@ -30,19 +30,28 @@ Print one book as text with this command:
 make text BOOK=2
 ```
 
+Write one book as a PDF with this command. The pictures are code-drawn panels. You do not pay for them.
+
+```sh
+make pdf BOOK=2
+```
+
+<img src="docs/sample-page.png" alt="Page 1 of Hot or Cold. The picture is a code-drawn ice icon. The words are English above Russian." width="280">
+
+
 ## Three paths
 
 | Path | You need | First command |
 |---|---|---|
 | Books | Python 3.11 and uv | `make books` |
 | Pictures | `OPENAI_API_KEY` or `XAI_API_KEY` | `make art BOOK=2` |
-| Audiobooks | A GPU machine, your voice file, `NARRATION_HOST` | [narration/README.md](narration/README.md) |
+| Audiobooks | A GPU machine, your voice file, `NARRATION_HOST` | [narration/setup_render.sh](narration/setup_render.sh) |
 
 Copy [.env.example](.env.example) to `.env`. Export the names you use. The clients read those variables. They do not print a key. They do not write a key to disk.
 
 ## License
 
-Code, stories and documentation are [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). You can use them. You can share them. Do not sell them. Third-party pieces keep their own licenses. See [NOTICE.md](NOTICE.md).
+Code, stories and documentation are [CC BY-NC 4.0](https://creativecommons.org/licenses/by-nc/4.0/). You can use them. You can share them. Do not sell them. The full terms are in [LICENSE](LICENSE). Third-party pieces keep their own licenses. See [NOTICE.md](NOTICE.md).
 
 ## Picture books
 

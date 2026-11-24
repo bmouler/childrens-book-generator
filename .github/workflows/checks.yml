@@ -20,3 +20,6 @@ jobs:
       - name: Compile every book
         working-directory: spike
         run: uv run --python 3.11 --group books python check_books.py
+      - name: Build one text-only PDF
+        working-directory: spike
+        run: uv run --python 3.11 --group books python build.py --text 2

@@ -10,6 +10,7 @@ renders/
 narration/covers/
 narration/builds/
 *.png
+!docs/sample-page.png
 
 # Secrets and a child's photo must never reach the repo.
 .env

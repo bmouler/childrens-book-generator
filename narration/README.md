@@ -126,20 +126,24 @@ Both accept `.epub` or `.txt`. The output is `~/bedtime-audiobooks/books/<name>.
 
 ## Environments
 
-Create these on the render machine.
+Run this on the render machine. The script creates three environments. It does not stop a service.
+
+```sh
+narration/setup_render.sh
+source ~/bedtime-audiobooks/env.sh
+```
+
+Add `--with-model` to download the Russian speech weights. Those weights are CC BY-NC 4.0. Do not sell output that depends on them.
 
 | Env | Holds |
 |---|---|
-| `~/miniforge3/envs/bedtime` | Python 3.11, torch, chatterbox-tts 0.1.7, rubberband, ffmpeg, Whisper through transformers. Pin `setuptools<81` because the watermark library needs `pkg_resources`. |
-| `~/bedtime-audiobooks/f5-env` | A venv with `--system-site-packages` over `bedtime`. Adds `f5-tts==1.1.22`. |
-| `~/bedtime-audiobooks/ruaccent-env` | A clean venv with `ruaccent` only, so its numpy cannot disturb the others. |
+| `$NARRATION_DEST/bedtime` | Python 3.11, torch 2.6.0, chatterbox-tts 0.1.7, transformers 4.46.3. `setuptools` stays below 81. |
+| `$NARRATION_DEST/f5-env` | Shares the bedtime packages. Adds `f5-tts` 1.1.22, torchcodec 0.2.1 and pyarrow 21.0.0. |
+| `$NARRATION_DEST/ruaccent-env` | `ruaccent`, with `huggingface_hub` 0.25.2. |
 
-```sh
-~/miniforge3/envs/bedtime/bin/python -m venv --system-site-packages ~/bedtime-audiobooks/f5-env
-~/bedtime-audiobooks/f5-env/bin/python -m pip install "f5-tts==1.1.22" "torch==2.6.0" "torchaudio==2.6.0" "torchcodec==0.2.1" "transformers==4.46.3" "setuptools<81" "pyarrow==21.0.0"
-~/miniforge3/envs/bedtime/bin/python -m venv ~/bedtime-audiobooks/ruaccent-env
-~/bedtime-audiobooks/ruaccent-env/bin/python -m pip install ruaccent
-```
+`ffmpeg` and `rubberband` stay outside the environments. The script names the install command when either tool is absent.
+
+`env.sh` sets `NARRATION_PYTHON` to `$NARRATION_DEST/bedtime/bin/python`. The shell scripts still accept `~/miniforge3/envs/bedtime/bin/python` when that variable is unset.
 
 Model files sit in `~/.cache/huggingface`. The F5 revision is pinned in the config.
 

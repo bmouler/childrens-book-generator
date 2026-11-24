@@ -13,7 +13,7 @@ import json
 import pathlib
 
 import numpy as np
-from PIL import Image
+from PIL import Image, ImageDraw, ImageFont
 
 import render as R
 
@@ -46,12 +46,35 @@ def exists(concept: str) -> bool:
     return path(concept).exists()
 
 
+def _drawn(name: str):
+    import icons
+    if name not in icons.ICONS:
+        return None
+    return icons.draw(name)
+
+
+def _badge(name: str) -> Image.Image:
+    """A letter mark for a key word that has no code icon and no file."""
+    im = Image.new("RGBA", (256, 256), (0, 0, 0, 0))
+    draw = ImageDraw.Draw(im)
+    draw.ellipse((8, 8, 248, 248), fill=(232, 226, 214, 255), outline=(*R.NAVY, 255), width=12)
+    letter = (name[:1] or "?").upper()
+    font = ImageFont.truetype(R.FONT_B, 120)
+    box = draw.textbbox((0, 0), letter, font=font)
+    x = (256 - (box[2] - box[0])) / 2 - box[0]
+    y = (256 - (box[3] - box[1])) / 2 - box[1]
+    draw.text((x, y), letter, font=font, fill=(*R.NAVY, 255))
+    return im
+
+
 @functools.lru_cache(maxsize=None)
 def load(concept: str) -> Image.Image:
     p = path(concept)
-    if not p.exists():
-        raise FileNotFoundError(f"no sticker for the key word {concept!r}: {p.name} is not in {LIB}")
-    return Image.open(p).convert("RGBA")
+    if p.exists():
+        return Image.open(p).convert("RGBA")
+    name = name_for(concept)
+    drawn = _drawn(name) or _drawn(concept)
+    return drawn if drawn is not None else _badge(name)
 
 
 def cut_sheet(sheet: pathlib.Path, names: list[str], cols: int, rows: int) -> dict[str, Image.Image]:

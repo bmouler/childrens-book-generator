@@ -105,9 +105,32 @@ class WordCard:
         c = self.b.counter(i)
         R.draw_block(cv, c, R.colors_of(c), R.CHROME_INK, box, self.CSIZE, valign="middle")
 
-    def _art(self, cv, name, height=None):
+    def concepts_of(self, pg) -> list[str]:
+        pairs = {p["id"]: p["concept"] for p in pg.get("pairs", ())}
+        return [pairs[pid] for pid in pg.get("focus", ()) if pid in pairs]
+
+    def _stand_in(self, cv, h, concepts):
+        """A code-drawn panel. It is not a photo, and it is not a child."""
+        cv.rect((0, 0, W, h), (236, 242, 248))
+        icons = [stickers.load(c) for c in list(concepts)[:2]]
+        if not icons:
+            return
+        side = min(420, h - 160)
+        gap = 80
+        total = len(icons) * side + (len(icons) - 1) * gap
+        x = (W - total) / 2
+        y = (h - side) / 2
+        for im in icons:
+            cv.sticker(im, (x, y, x + side, y + side))
+            x += side + gap
+
+    def _art(self, cv, name, height=None, concepts=()):
         h = self.ART_H if height is None else height
-        cv.fit(self.b.art(name), (0, 0, W, h))
+        path = self.b.dir / f"{name}.png"
+        if path.exists():
+            cv.fit(self.b.art(name), (0, 0, W, h))
+        else:
+            self._stand_in(cv, h, concepts)
         cv.rect((0, h, W, h + 8), BLACK)
 
     def _chips(self, cv, pg):
@@ -173,7 +196,7 @@ class WordCard:
         if pg.get("chart"):
             self._chart(cv, pg["chart"])
         else:
-            self._art(cv, pg["art"], self.VERSE_ART_H if pg.get("verse") else None)
+            self._art(cv, pg["art"], self.VERSE_ART_H if pg.get("verse") else None, self.concepts_of(pg))
             if pg.get("focus"):
                 self._chips(cv, pg)
                 self.text(cv, pg, self.zone, self.size)
@@ -187,6 +210,7 @@ class WordCard:
 
     def cover(self):
         cv = R.Canvas()
-        self._art(cv, "cover_flat")
+        concepts = self.concepts_of(self.b.pages[0]) if self.b.pages else []
+        self._art(cv, "cover_flat", concepts=concepts)
         self.text(cv, self.b.title, (54, self.CHIPS[1], 1566, self.SENT[3]), self.tsize, align="center", bold=True)
         return cv.done()

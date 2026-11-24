@@ -1,7 +1,8 @@
 """Build books: page images, one PDF per book, a contact sheet per book.
 
-usage: build.py [N ...]
-  Build the named books, or every book that has all its pictures and stickers. A PDF goes to renders/ as
+usage: build.py [--text] [N ...]
+  Build the named books, or every book that has all its pictures and stickers. --text builds the
+  named books anyway. A missing picture becomes a code-drawn panel. A PDF goes to renders/ as
   "NN Title.pdf". The page images and a contact sheet go to renders/bookN/. renders/ is ignored by git:
   rebuild it any time from the art and the code. Two builds of one book give identical page images. The
   PDF differs only in its random document ID.
@@ -33,12 +34,12 @@ def pdf_name(n: int, english_title: str) -> str:
     return f"{n:02d} {re.sub(r'[?!,.:]', '', english_title).replace('  ', ' ').strip()}.pdf"
 
 
-def build(n: int) -> list[str]:
+def build(n: int, text_only: bool = False) -> list[str]:
     """Build book n. Returns what is missing (nothing was built), or an empty list."""
     compiled = library.compiled(n)
     book = wordcard.Book(n, compiled)
     gone = book.missing()
-    if gone:
+    if gone and not text_only:
         return gone
     pages = wordcard.WordCard(book).all_pages()
     folder = OUT / f"book{n}"
@@ -59,11 +60,15 @@ def build(n: int) -> list[str]:
 
 
 if __name__ == "__main__":
-    named = [int(a) for a in sys.argv[1:]]
+    args = sys.argv[1:]
+    text_only = "--text" in args
+    named = [int(a) for a in args if a != "--text"]
+    if text_only and not named:
+        raise SystemExit("usage: build.py --text N [N ...]")
     OUT.mkdir(exist_ok=True)
     skipped = {}
     for n in named or library.numbers():
-        gone = build(n)
+        gone = build(n, text_only=text_only)
         if gone:
             skipped[n] = gone
     for n, gone in skipped.items():
